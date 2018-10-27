@@ -4,7 +4,7 @@
 [ext_resource path="res://places/features/Building.tscn" type="PackedScene" id=2]
 [ext_resource path="res://beings/Being.tscn" type="PackedScene" id=3]
 
-[node name="City" type="TileMap" index="0"]
+[node name="City" type="TileMap"]
 
 mode = 0
 tile_set = null

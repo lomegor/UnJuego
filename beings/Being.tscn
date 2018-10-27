@@ -5,7 +5,7 @@
 [ext_resource path="res://abstractions/Body.tscn" type="PackedScene" id=3]
 [ext_resource path="res://abstractions/Trait.tscn" type="PackedScene" id=4]
 
-[node name="Being" type="Node2D" index="0"]
+[node name="Being" type="Node2D"]
 
 position = Vector2( 0, 1 )
 script = ExtResource( 1 )
