@@ -1,7 +1,8 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://places/GlobeTiles.tres" type="TileSet" id=1]
-[ext_resource path="res://places/Globe.gd" type="Script" id=2]
+[ext_resource path="res://src/places/GlobeTiles.tres" type="TileSet" id=1]
+[ext_resource path="res://src/places/Globe.gd" type="Script" id=2]
+
 
 [node name="Globe" type="TileMap" index="0"]
 

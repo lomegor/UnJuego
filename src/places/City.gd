@@ -1,6 +1,6 @@
 extends TileMap
 
-var GlobeTiles = load("res://places/GlobeTiles.tscn").instance()
+var GlobeTiles = load("res://src/places/GlobeTiles.tscn").instance()
 
 var city_name
 var colour

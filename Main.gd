@@ -1,8 +1,8 @@
 extends Node
 
-var Civilization = load("res://Civilization.tscn")
-var City = load("res://places/City.tscn")
-var Globe = load("res://places/Globe.tscn")
+var Civilization = load("res://src/Civilization.tscn")
+var City = load("res://src/places/City.tscn")
+var Globe = load("res://src/places/Globe.tscn")
 
 var civilizations = []
 var globe

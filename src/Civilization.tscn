@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Civilization.gd" type="Script" id=1]
-[ext_resource path="res://places/City.tscn" type="PackedScene" id=2]
-[ext_resource path="res://beings/Being.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/Civilization.gd" type="Script" id=1]
+[ext_resource path="res://src/places/City.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/beings/Being.tscn" type="PackedScene" id=3]
 
-[node name="Civilization" type="Node2D"]
+[node name="Civilization" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
