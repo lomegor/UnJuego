@@ -1,8 +1,6 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://places/City.gd" type="Script" id=1]
-[ext_resource path="res://places/features/Building.tscn" type="PackedScene" id=2]
-[ext_resource path="res://beings/Being.tscn" type="PackedScene" id=3]
 
 [node name="City" type="TileMap"]
 
@@ -29,14 +27,6 @@ script = ExtResource( 1 )
 
 position = Vector2( 1, 0 )
 
-[node name="Building1" parent="Features" index="0" instance=ExtResource( 2 )]
-
-[node name="Building2" parent="Features" index="1" instance=ExtResource( 2 )]
-
 [node name="Beings" type="Node2D" parent="." index="1"]
-
-[node name="Being1" parent="Beings" index="0" instance=ExtResource( 3 )]
-
-[node name="Being2" parent="Beings" index="1" instance=ExtResource( 3 )]
 
 

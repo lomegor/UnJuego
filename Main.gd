@@ -4,26 +4,13 @@ extends Node
 var Globe = load("res://places/Globe.tscn")
 var globe
 
-var cities = []
 var position = []
 var turn = 0
 
 func _ready():
 	randomize()
 	globe = Globe.instance();
-
-	cities.append(Vector2(randi() % 32, randi() % 18))
-	cities.append(Vector2(randi() % 32, randi() % 18))
-	position.append(cities[0])
-	position.append(cities[1])
-
-	globe.set_tile(cities[0], "City1")
-	globe.set_tile(cities[1], "City2")
-
-	for x in range(0, 32):
-		for y in range(0, 18):
-			if (Vector2(x, y) != cities[0] and Vector2(x, y) != cities[1]):
-				globe.set_cell(x, y, randi() % 4 + 2)
+	globe.init(32, 18)
 	add_child(globe)
 
 func _process(delta):

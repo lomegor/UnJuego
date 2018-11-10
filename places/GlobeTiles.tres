@@ -12,11 +12,11 @@
 [ext_resource path="res://places/tiles/TileGrass1.png" type="Texture" id=10]
 [ext_resource path="res://places/tiles/TileGrass2.png" type="Texture" id=11]
 [ext_resource path="res://places/tiles/TileGrass3.png" type="Texture" id=12]
-[ext_resource path="res://places/tiles/TileMountain.png" type="Texture" id=13]
-[ext_resource path="res://places/tiles/TileRoad1.png" type="Texture" id=14]
-[ext_resource path="res://places/tiles/TileRoad2.png" type="Texture" id=15]
-[ext_resource path="res://places/tiles/TileRoad3.png" type="Texture" id=16]
-[ext_resource path="res://places/tiles/TileRoad4.png" type="Texture" id=17]
+[ext_resource path="res://places/tiles/TileRoad1.png" type="Texture" id=13]
+[ext_resource path="res://places/tiles/TileRoad2.png" type="Texture" id=14]
+[ext_resource path="res://places/tiles/TileRoad3.png" type="Texture" id=15]
+[ext_resource path="res://places/tiles/TileRoad4.png" type="Texture" id=16]
+[ext_resource path="res://places/tiles/TileMountain.png" type="Texture" id=17]
 
 [resource]
 
@@ -66,7 +66,7 @@
 4/navigation_offset = Vector2( 0, 0 )
 4/shapes = [  ]
 5/name = "Mountain"
-5/texture = ExtResource( 13 )
+5/texture = ExtResource( 17 )
 5/tex_offset = Vector2( 0, 0 )
 5/modulate = Color( 1, 1, 1, 1 )
 5/region = Rect2( 0, 0, 33, 33 )
@@ -75,7 +75,7 @@
 5/navigation_offset = Vector2( 0, 0 )
 5/shapes = [  ]
 6/name = "Road1"
-6/texture = ExtResource( 14 )
+6/texture = ExtResource( 13 )
 6/tex_offset = Vector2( 0, 0 )
 6/modulate = Color( 1, 1, 1, 1 )
 6/region = Rect2( 0, 0, 33, 33 )
@@ -84,7 +84,7 @@
 6/navigation_offset = Vector2( 0, 0 )
 6/shapes = [  ]
 7/name = "Road2"
-7/texture = ExtResource( 15 )
+7/texture = ExtResource( 14 )
 7/tex_offset = Vector2( 0, 0 )
 7/modulate = Color( 1, 1, 1, 1 )
 7/region = Rect2( 0, 0, 33, 33 )
@@ -93,7 +93,7 @@
 7/navigation_offset = Vector2( 0, 0 )
 7/shapes = [  ]
 8/name = "Road3"
-8/texture = ExtResource( 16 )
+8/texture = ExtResource( 15 )
 8/tex_offset = Vector2( 0, 0 )
 8/modulate = Color( 1, 1, 1, 1 )
 8/region = Rect2( 0, 0, 33, 33 )
@@ -102,7 +102,7 @@
 8/navigation_offset = Vector2( 0, 0 )
 8/shapes = [  ]
 9/name = "Road4"
-9/texture = ExtResource( 17 )
+9/texture = ExtResource( 16 )
 9/tex_offset = Vector2( 0, 0 )
 9/modulate = Color( 1, 1, 1, 1 )
 9/region = Rect2( 0, 0, 33, 33 )
@@ -173,4 +173,148 @@
 16/occluder_offset = Vector2( 0, 0 )
 16/navigation_offset = Vector2( 0, 0 )
 16/shapes = [  ]
+17/name = "CityBlue"
+17/texture = ExtResource( 1 )
+17/tex_offset = Vector2( 0, 0 )
+17/modulate = Color( 1, 1, 1, 1 )
+17/region = Rect2( 0, 0, 33, 33 )
+17/is_autotile = false
+17/occluder_offset = Vector2( 0, 0 )
+17/navigation_offset = Vector2( 0, 0 )
+17/shapes = [  ]
+18/name = "CityRed"
+18/texture = ExtResource( 2 )
+18/tex_offset = Vector2( 0, 0 )
+18/modulate = Color( 1, 1, 1, 1 )
+18/region = Rect2( 0, 0, 33, 33 )
+18/is_autotile = false
+18/occluder_offset = Vector2( 0, 0 )
+18/navigation_offset = Vector2( 0, 0 )
+18/shapes = [  ]
+19/name = "GrassLight"
+19/texture = ExtResource( 10 )
+19/tex_offset = Vector2( 0, 0 )
+19/modulate = Color( 1, 1, 1, 1 )
+19/region = Rect2( 0, 0, 33, 33 )
+19/is_autotile = false
+19/occluder_offset = Vector2( 0, 0 )
+19/navigation_offset = Vector2( 0, 0 )
+19/shapes = [  ]
+20/name = "GrassMedium"
+20/texture = ExtResource( 11 )
+20/tex_offset = Vector2( 0, 0 )
+20/modulate = Color( 1, 1, 1, 1 )
+20/region = Rect2( 0, 0, 33, 33 )
+20/is_autotile = false
+20/occluder_offset = Vector2( 0, 0 )
+20/navigation_offset = Vector2( 0, 0 )
+20/shapes = [  ]
+21/name = "GrassHeavy"
+21/texture = ExtResource( 12 )
+21/tex_offset = Vector2( 0, 0 )
+21/modulate = Color( 1, 1, 1, 1 )
+21/region = Rect2( 0, 0, 33, 33 )
+21/is_autotile = false
+21/occluder_offset = Vector2( 0, 0 )
+21/navigation_offset = Vector2( 0, 0 )
+21/shapes = [  ]
+22/name = "RoadTopRight"
+22/texture = ExtResource( 13 )
+22/tex_offset = Vector2( 0, 0 )
+22/modulate = Color( 1, 1, 1, 1 )
+22/region = Rect2( 0, 0, 33, 33 )
+22/is_autotile = false
+22/occluder_offset = Vector2( 0, 0 )
+22/navigation_offset = Vector2( 0, 0 )
+22/shapes = [  ]
+23/name = "RoadCenter"
+23/texture = ExtResource( 14 )
+23/tex_offset = Vector2( 0, 0 )
+23/modulate = Color( 1, 1, 1, 1 )
+23/region = Rect2( 0, 0, 33, 33 )
+23/is_autotile = false
+23/occluder_offset = Vector2( 0, 0 )
+23/navigation_offset = Vector2( 0, 0 )
+23/shapes = [  ]
+24/name = "RoadRight"
+24/texture = ExtResource( 15 )
+24/tex_offset = Vector2( 0, 0 )
+24/modulate = Color( 1, 1, 1, 1 )
+24/region = Rect2( 0, 0, 33, 33 )
+24/is_autotile = false
+24/occluder_offset = Vector2( 0, 0 )
+24/navigation_offset = Vector2( 0, 0 )
+24/shapes = [  ]
+25/name = "RoadTop"
+25/texture = ExtResource( 16 )
+25/tex_offset = Vector2( 0, 0 )
+25/modulate = Color( 1, 1, 1, 1 )
+25/region = Rect2( 0, 0, 33, 33 )
+25/is_autotile = false
+25/occluder_offset = Vector2( 0, 0 )
+25/navigation_offset = Vector2( 0, 0 )
+25/shapes = [  ]
+26/name = "RoadLeft"
+26/texture = ExtResource( 3 )
+26/tex_offset = Vector2( 0, 0 )
+26/modulate = Color( 1, 1, 1, 1 )
+26/region = Rect2( 0, 0, 33, 33 )
+26/is_autotile = false
+26/occluder_offset = Vector2( 0, 0 )
+26/navigation_offset = Vector2( 0, 0 )
+26/shapes = [  ]
+27/name = "RoadBottom"
+27/texture = ExtResource( 4 )
+27/tex_offset = Vector2( 0, 0 )
+27/modulate = Color( 1, 1, 1, 1 )
+27/region = Rect2( 0, 0, 33, 33 )
+27/is_autotile = false
+27/occluder_offset = Vector2( 0, 0 )
+27/navigation_offset = Vector2( 0, 0 )
+27/shapes = [  ]
+28/name = "RoadLeftRight"
+28/texture = ExtResource( 5 )
+28/tex_offset = Vector2( 0, 0 )
+28/modulate = Color( 1, 1, 1, 1 )
+28/region = Rect2( 0, 0, 33, 33 )
+28/is_autotile = false
+28/occluder_offset = Vector2( 0, 0 )
+28/navigation_offset = Vector2( 0, 0 )
+28/shapes = [  ]
+29/name = "RoadTopBottom"
+29/texture = ExtResource( 6 )
+29/tex_offset = Vector2( 0, 0 )
+29/modulate = Color( 1, 1, 1, 1 )
+29/region = Rect2( 0, 0, 33, 33 )
+29/is_autotile = false
+29/occluder_offset = Vector2( 0, 0 )
+29/navigation_offset = Vector2( 0, 0 )
+29/shapes = [  ]
+30/name = "RoadLeftTop"
+30/texture = ExtResource( 7 )
+30/tex_offset = Vector2( 0, 0 )
+30/modulate = Color( 1, 1, 1, 1 )
+30/region = Rect2( 0, 0, 33, 33 )
+30/is_autotile = false
+30/occluder_offset = Vector2( 0, 0 )
+30/navigation_offset = Vector2( 0, 0 )
+30/shapes = [  ]
+31/name = "RoadBottomLeft"
+31/texture = ExtResource( 8 )
+31/tex_offset = Vector2( 0, 0 )
+31/modulate = Color( 1, 1, 1, 1 )
+31/region = Rect2( 0, 0, 33, 33 )
+31/is_autotile = false
+31/occluder_offset = Vector2( 0, 0 )
+31/navigation_offset = Vector2( 0, 0 )
+31/shapes = [  ]
+32/name = "RoadRightBottom"
+32/texture = ExtResource( 9 )
+32/tex_offset = Vector2( 0, 0 )
+32/modulate = Color( 1, 1, 1, 1 )
+32/region = Rect2( 0, 0, 33, 33 )
+32/is_autotile = false
+32/occluder_offset = Vector2( 0, 0 )
+32/navigation_offset = Vector2( 0, 0 )
+32/shapes = [  ]
 
