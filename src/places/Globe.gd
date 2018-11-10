@@ -12,6 +12,7 @@ onready var camera = get_node('Camera')
 class Tile:
 	var tile_name
 	var object
+
 	func _init(tile_name, object=null):
 		self.tile_name = tile_name
 		self.object = object
@@ -41,7 +42,7 @@ func init(width, height, cities):
 			if (not tiles[x][y]):
 				var new_tile_name
 				# Let's not create too many mountains
-				if (randi() % 10 == 1):
+				if (randi() % 100 == 1):
 					new_tile_name = GlobeTiles.MOUNTAIN_TILE_NAMES[randi() % GlobeTiles.MOUNTAIN_TILE_NAMES.size()]
 				else:
 					new_tile_name = GlobeTiles.GRASS_TILE_NAMES[randi() % GlobeTiles.GRASS_TILE_NAMES.size()]
