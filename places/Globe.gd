@@ -1,13 +1,6 @@
 extends TileMap
 
-# Tileset names
-var city_tile_names = ["CityBlue", "CityRed"]
-var grass_tile_names = ["GrassLight", "GrassMedium", "GrassHeavy"]
-var mountain_tile_names = ["Mountain"]
-var road_tile_names = ["RoadCenter", "RoadTop", "RoadRight", "RoadBottom", "RoadLeft", "RoadTopBottom", "RoadLeftRight",
-	"RoadTopRight", "RoadRightBottom", "RoadBottomLeft", "RoadLeftTop"]
-
-var City = load("res://places/City.tscn")
+var GlobeTiles = load("res://places/GlobeTiles.tscn").instance()
 
 # Map properties
 var tiles = []
@@ -24,19 +17,17 @@ class Tile:
 func _ready():
 	pass
 
-func init(width, height):
+func init(width, height, cities):
 	_create_tiles(width, height)
 
-	for city_tile_name in city_tile_names:
-		var new_city = City.instance()
-
+	for city in cities:
 		var newX = randi() % width
 		var newY = randi() % height
 		while (tiles[newX][newY] != null):
 			newX = randi() % width
 			newY = randi() % height
 
-		city_tiles.append(set_tile_by_name(newX, newY, city_tile_name, new_city))
+		city_tiles.append(set_tile_by_name(newX, newY, city.tile_name, city))
 
 	for x in range(width):
 		for y in range(height):
@@ -44,9 +35,9 @@ func init(width, height):
 				var new_tile_name
 				# Let's not create too many mountains
 				if (randi() % 10 == 1):
-					new_tile_name = mountain_tile_names[randi() % mountain_tile_names.size()]
+					new_tile_name = GlobeTiles.MOUNTAIN_TILE_NAMES[randi() % GlobeTiles.MOUNTAIN_TILE_NAMES.size()]
 				else:
-					new_tile_name = grass_tile_names[randi() % grass_tile_names.size()]
+					new_tile_name = GlobeTiles.GRASS_TILE_NAMES[randi() % GlobeTiles.GRASS_TILE_NAMES.size()]
 				set_tile_by_name(x, y, new_tile_name)
 
 func _create_tiles(width, height):

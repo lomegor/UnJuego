@@ -2,14 +2,14 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/TileCity1.png-4c831267a3bb088b705c68e26e209b4a.stex"
+path="res://.import/TileCity1.png-cca741b29dba2e2223e52dec216d1006.stex"
 
 [deps]
 
-source_file="res://places/tiles/TileCity1.png"
+source_file="res://src/places/tiles/TileCity1.png"
 source_md5="db8fbef2bcca8d870ee674e2e19106c5"
 
-dest_files=[ "res://.import/TileCity1.png-4c831267a3bb088b705c68e26e209b4a.stex" ]
+dest_files=[ "res://.import/TileCity1.png-cca741b29dba2e2223e52dec216d1006.stex" ]
 dest_md5="f294239acfdb94801c61d6761c90d9f1"
 
 [params]

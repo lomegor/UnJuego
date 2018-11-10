@@ -2,14 +2,14 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/TileRoad1.png-4e745c947f263d12985362e336130724.stex"
+path="res://.import/TileRoad1.png-d6ad9ed3e3a64ed0fc090a8c3dce5305.stex"
 
 [deps]
 
-source_file="res://places/tiles/TileRoad1.png"
+source_file="res://src/places/tiles/TileRoad1.png"
 source_md5="64c62f133b44878427afcd1f64c26b09"
 
-dest_files=[ "res://.import/TileRoad1.png-4e745c947f263d12985362e336130724.stex" ]
+dest_files=[ "res://.import/TileRoad1.png-d6ad9ed3e3a64ed0fc090a8c3dce5305.stex" ]
 dest_md5="f58493e1290b4fd42e654348c1e40ee8"
 
 [params]

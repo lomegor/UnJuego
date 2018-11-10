@@ -2,14 +2,14 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/TileMountain.png-7f2f3bbe822ae45bc1258f30237b4554.stex"
+path="res://.import/TileMountain.png-3cfbc5226efdc234fac9b87e606f5783.stex"
 
 [deps]
 
-source_file="res://places/tiles/TileMountain.png"
+source_file="res://src/places/tiles/TileMountain.png"
 source_md5="6df490172a6295a4e7160c796c69d273"
 
-dest_files=[ "res://.import/TileMountain.png-7f2f3bbe822ae45bc1258f30237b4554.stex" ]
+dest_files=[ "res://.import/TileMountain.png-3cfbc5226efdc234fac9b87e606f5783.stex" ]
 dest_md5="c7d9c9b70f86938659b740ba55e47863"
 
 [params]

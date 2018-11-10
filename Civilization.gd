@@ -1,5 +1,8 @@
 extends Node2D
 
+var civilization_name
+var colour
+
 # A dictionary of the resources that the civilization currenlty has
 var resources = {
 	'gold': 0,
@@ -10,9 +13,11 @@ var resources = {
 var influence = {}
 
 func _ready():
-	# Called when the node is added to the scene for the first time.
-	# Initialization here
 	pass
+
+func init(civilization_name, colour):
+	civilization_name = civilization_name
+	colour = colour
 
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.

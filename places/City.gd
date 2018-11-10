@@ -1,9 +1,21 @@
 extends TileMap
 
+var GlobeTiles = load("res://places/GlobeTiles.tscn").instance()
+
+var city_name
+var colour
+var tile_name
+
 func _ready():
-	# Called when the node is added to the scene for the first time.
-	# Initialization here
 	pass
+
+func init(city_name, colour):
+	city_name = city_name
+	colour = colour
+	if (colour == 'blue'):
+		tile_name = GlobeTiles.CITY_TILE_NAMES[0]
+	else:
+		tile_name = GlobeTiles.CITY_TILE_NAMES[1]
 
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.
