@@ -2,7 +2,7 @@ extends Node2D
 
 
 # Name for the being
-var name
+var being_name
 # Class and level
 var clase # can't name class, protected name
 var level
