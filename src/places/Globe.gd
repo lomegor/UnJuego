@@ -6,16 +6,23 @@ var GlobeTiles = load("res://src/places/GlobeTiles.tscn").instance()
 var tiles = []
 var city_tiles = []
 
+onready var camera = get_node('Camera')
+
 # Class to represent a tile on the map
 class Tile:
 	var tile_name
 	var object
 	func _init(tile_name, object=null):
-		tile_name = tile_name
-		object = object
+		self.tile_name = tile_name
+		self.object = object
 
 func _ready():
-	pass
+	var map_limits = get_used_rect()
+	# Add a bit of padding to the camera
+	camera.limit_left = (map_limits.position.x - 1) * cell_size.x
+	camera.limit_top = (map_limits.position.y - 1) * cell_size.y
+	camera.limit_right = (map_limits.end.x + 1) * cell_size.x
+	camera.limit_bottom = (map_limits.end.y + 1) * cell_size.y
 
 func init(width, height, cities):
 	_create_tiles(width, height)

@@ -10,12 +10,12 @@ func _ready():
 	pass
 
 func init(city_name, colour):
-	city_name = city_name
-	colour = colour
+	self.city_name = city_name
+	self.colour = colour
 	if (colour == 'blue'):
-		tile_name = GlobeTiles.CITY_TILE_NAMES[0]
+		self.tile_name = GlobeTiles.CITY_TILE_NAMES[0]
 	else:
-		tile_name = GlobeTiles.CITY_TILE_NAMES[1]
+		self.tile_name = GlobeTiles.CITY_TILE_NAMES[1]
 
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.

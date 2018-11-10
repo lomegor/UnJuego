@@ -1,8 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://src/places/GlobeTiles.tres" type="TileSet" id=1]
 [ext_resource path="res://src/places/Globe.gd" type="Script" id=2]
-
+[ext_resource path="res://src/helpers/Camera.tscn" type="PackedScene" id=3]
 
 [node name="Globe" type="TileMap" index="0"]
 
@@ -28,5 +28,10 @@ script = ExtResource( 2 )
 [node name="Features" type="Node2D" parent="." index="0"]
 
 [node name="Cities" type="Node2D" parent="." index="1"]
+
+[node name="Camera" parent="." index="2" instance=ExtResource( 3 )]
+
+current = true
+_sections_unfolded = [ "Limit" ]
 
 

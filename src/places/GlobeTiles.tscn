@@ -20,6 +20,8 @@
 [ext_resource path="res://src/places/tiles/TileRoad11.png" type="Texture" id=18]
 
 
+
+
 [node name="GlobeTiles" type="Node2D" index="0"]
 
 position = Vector2( 0, 3 )
