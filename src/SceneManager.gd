@@ -3,11 +3,6 @@ extends Node
 # Current scene for switching
 var current_scene = null
 
-# Civilizations in the game
-var civilizations = []
-# Map for the game
-var globe
-
 func _ready():
 	var root = get_tree().get_root()
 	current_scene = root.get_child(root.get_child_count() -1)

@@ -11,12 +11,12 @@ config_version=3
 [application]
 
 config/name="UnJuego"
-run/main_scene="res://Main.tscn"
+run/main_scene="res://src/Main.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
-Global="*res://Global.gd"
+GameState="*res://src/GameState.gd"
 
 [input]
 
