@@ -22,18 +22,22 @@ var tiles = []
 func _ready():
 	pass
 
+# Create the array for tiles
 func _create_tiles(width, height):
 	for x in range(width):
 		var column = []
 		column.resize(height)
 		tiles.append(column)
 
+# Return a random name from the list
 func get_random_tile_name(list):
 	return list[randi() % list.size()]
-	
+
+# Get the tile name of the tile in x, y
 func get_tile_name(x, y):
 	return tiles[x][y].tile_name
 
+# Se the tile in x, y with a tile name
 func set_tile_by_name(x, y, tile_name, object=null):
 	tiles[x][y] = Tile.new(tile_name, object)
 	set_cell(x, y, tile_set.find_tile_by_name(tile_name))

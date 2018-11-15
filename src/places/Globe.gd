@@ -6,8 +6,8 @@ var city_tiles = []
 onready var camera = get_node('Camera')
 
 func _ready():
+	# Set up the camera and add a bit of padding to the camera
 	var map_limits = get_used_rect()
-	# Add a bit of padding to the camera
 	camera.limit_left = (map_limits.position.x - 1) * cell_size.x
 	camera.limit_top = (map_limits.position.y - 1) * cell_size.y
 	camera.limit_right = (map_limits.end.x + 1) * cell_size.x
@@ -16,6 +16,7 @@ func _ready():
 func init(width, height, cities):
 	_create_tiles(width, height)
 
+	# Add the new cities
 	for city in cities:
 		var newX = randi() % width
 		var newY = randi() % height
@@ -25,6 +26,7 @@ func init(width, height, cities):
 
 		city_tiles.append(set_tile_by_name(newX, newY, city.tile_name, city))
 
+	# Randomise the rest of the map
 	for x in range(width):
 		for y in range(height):
 			if (not tiles[x][y]):

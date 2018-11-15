@@ -6,6 +6,8 @@ var Globe = load("res://src/places/Globe.tscn")
 
 func _ready():
 	randomize()
+
+	# Crete two civilizations
 	Global.civilizations.append(Civilization.instance())	
 	Global.civilizations[0].init('Great Britain', 'red')
 	Global.civilizations.append(Civilization.instance())	
@@ -17,9 +19,11 @@ func _ready():
 	cities.append(City.instance())
 	cities[1].init('Village', Global.civilizations[1].civilization_name)
 
+	# Initiate map
 	Global.globe = Globe.instance()
 	Global.globe.init(200, 100, cities)
 
+	# Change to the map scene (probably in a button later)
 	Global.goto_scene(Global.globe)
 
 func _process(delta):
