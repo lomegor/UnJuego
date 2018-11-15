@@ -1,6 +1,6 @@
 extends TileMap
 
-var GlobeTiles = load("res://src/places/GlobeTiles.tscn").instance()
+var Tiles = load("res://src/places/tiles/Tiles.tscn").instance()
 
 # Map properties
 var tiles = []
@@ -43,9 +43,9 @@ func init(width, height, cities):
 				var new_tile_name
 				# Let's not create too many mountains
 				if (randi() % 100 == 1):
-					new_tile_name = GlobeTiles.MOUNTAIN_TILE_NAMES[randi() % GlobeTiles.MOUNTAIN_TILE_NAMES.size()]
+					new_tile_name = Tiles.MOUNTAIN_TILE_NAMES[randi() % Tiles.MOUNTAIN_TILE_NAMES.size()]
 				else:
-					new_tile_name = GlobeTiles.GRASS_TILE_NAMES[randi() % GlobeTiles.GRASS_TILE_NAMES.size()]
+					new_tile_name = Tiles.GRASS_TILE_NAMES[randi() % Tiles.GRASS_TILE_NAMES.size()]
 				set_tile_by_name(x, y, new_tile_name)
 
 func _create_tiles(width, height):

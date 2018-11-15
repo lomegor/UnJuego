@@ -1,6 +1,6 @@
 extends TileMap
 
-var GlobeTiles = load("res://src/places/GlobeTiles.tscn").instance()
+var Tiles = load("res://src/places/tiles/Tiles.tscn").instance()
 
 var city_name
 var colour
@@ -13,9 +13,9 @@ func init(city_name, colour):
 	self.city_name = city_name
 	self.colour = colour
 	if (colour == 'blue'):
-		self.tile_name = GlobeTiles.CITY_TILE_NAMES[0]
+		self.tile_name = Tiles.CITY_TILE_NAMES[0]
 	else:
-		self.tile_name = GlobeTiles.CITY_TILE_NAMES[1]
+		self.tile_name = Tiles.CITY_TILE_NAMES[1]
 
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.

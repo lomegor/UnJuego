@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://src/places/GlobeTiles.tres" type="TileSet" id=1]
+[ext_resource path="res://src/places/tiles/Tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://src/places/Globe.gd" type="Script" id=2]
 [ext_resource path="res://src/helpers/Camera.tscn" type="PackedScene" id=3]
 

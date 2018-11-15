@@ -1,6 +1,6 @@
 [gd_scene load_steps=19 format=2]
 
-[ext_resource path="res://src/places/GlobeTiles.gd" type="Script" id=1]
+[ext_resource path="res://src/places/tiles/Tiles.gd" type="Script" id=1]
 [ext_resource path="res://src/places/tiles/TileCity1.png" type="Texture" id=2]
 [ext_resource path="res://src/places/tiles/TileCity2.png" type="Texture" id=3]
 [ext_resource path="res://src/places/tiles/TileGrass1.png" type="Texture" id=4]
@@ -22,7 +22,9 @@
 
 
 
-[node name="GlobeTiles" type="Node2D" index="0"]
+
+
+[node name="Tiles" type="Node2D" index="0"]
 
 position = Vector2( 0, 3 )
 script = ExtResource( 1 )
