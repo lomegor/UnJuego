@@ -1,21 +1,9 @@
-extends TileMap
-
-var Tiles = load("res://src/places/tiles/Tiles.tscn").instance()
+extends "res://src/places/GameTileMap.gd"
 
 # Map properties
-var tiles = []
 var city_tiles = []
 
 onready var camera = get_node('Camera')
-
-# Class to represent a tile on the map
-class Tile:
-	var tile_name
-	var object
-
-	func _init(tile_name, object=null):
-		self.tile_name = tile_name
-		self.object = object
 
 func _ready():
 	var map_limits = get_used_rect()
@@ -43,21 +31,7 @@ func init(width, height, cities):
 				var new_tile_name
 				# Let's not create too many mountains
 				if (randi() % 100 == 1):
-					new_tile_name = Tiles.MOUNTAIN_TILE_NAMES[randi() % Tiles.MOUNTAIN_TILE_NAMES.size()]
+					new_tile_name = get_random_tile_name(MOUNTAIN_TILE_NAMES)
 				else:
-					new_tile_name = Tiles.GRASS_TILE_NAMES[randi() % Tiles.GRASS_TILE_NAMES.size()]
+					new_tile_name = get_random_tile_name(GRASS_TILE_NAMES)
 				set_tile_by_name(x, y, new_tile_name)
-
-func _create_tiles(width, height):
-	for x in range(width):
-		var column = []
-		column.resize(height)
-		tiles.append(column)
-	
-func get_tile_name(x, y):
-	return tiles[x][y].tile_name
-
-func set_tile_by_name(x, y, tile_name, object=null):
-	tiles[x][y] = Tile.new(tile_name, object)
-	set_cell(x, y, tile_set.find_tile_by_name(tile_name))
-	return tiles[x][y]

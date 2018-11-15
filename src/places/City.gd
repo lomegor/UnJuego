@@ -1,6 +1,4 @@
-extends TileMap
-
-var Tiles = load("res://src/places/tiles/Tiles.tscn").instance()
+extends "res://src/places/GameTileMap.gd"
 
 var city_name
 var colour
@@ -13,11 +11,6 @@ func init(city_name, colour):
 	self.city_name = city_name
 	self.colour = colour
 	if (colour == 'blue'):
-		self.tile_name = Tiles.CITY_TILE_NAMES[0]
+		self.tile_name = CITY_TILE_NAMES[0]
 	else:
-		self.tile_name = Tiles.CITY_TILE_NAMES[1]
-
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
+		self.tile_name = CITY_TILE_NAMES[1]
