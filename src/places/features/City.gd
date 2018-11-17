@@ -11,12 +11,14 @@ const _SPRITES = {
 }
 
 var city
+var description
 
 func _ready():
 	pass
 
 func init(city, type):
 	self.city = city
+	self.description = city.city_name
 	_load_texture(_SPRITES[type])
 
 func _on_click():
