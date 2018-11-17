@@ -7,6 +7,8 @@ const MOUNTAIN_TILE_NAMES = ["Mountain"]
 const ROAD_TILE_NAMES = ["RoadCenter", "RoadTop", "RoadRight", "RoadBottom", "RoadLeft", "RoadTopBottom", "RoadLeftRight",
 	"RoadTopRight", "RoadRightBottom", "RoadBottomLeft", "RoadLeftTop"]
 
+var Camera = load("res://src/helpers/Camera.tscn")
+
 # Class to represent a tile on the map
 class Tile:
 	var tile_name
@@ -20,7 +22,15 @@ class Tile:
 var tiles = []
 
 func _ready():
-	pass
+	# Set up the camera and add a bit of padding to the camera
+	var camera = Camera.instance()
+	camera.current = true
+	var map_limits = get_used_rect()
+	camera.limit_left = (map_limits.position.x - 1) * cell_size.x
+	camera.limit_top = (map_limits.position.y - 1) * cell_size.y
+	camera.limit_right = (map_limits.end.x + 1) * cell_size.x
+	camera.limit_bottom = (map_limits.end.y + 1) * cell_size.y
+	add_child(camera)
 
 # Create the array for tiles
 func _create_tiles(width, height):
