@@ -25,8 +25,21 @@ shape = SubResource( 1 )
 [node name="Sprite" type="Sprite" parent="." index="1"]
 
 centered = false
-_sections_unfolded = [ "Offset" ]
+
+[node name="Square" type="Line2D" parent="." index="2"]
+
+visible = false
+points = PoolVector2Array(  )
+width = 1.0
+default_color = Color( 0, 0, 0, 1 )
+texture_mode = 868860016
+sharp_limit = 2.0
+round_precision = 8
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
 
 
