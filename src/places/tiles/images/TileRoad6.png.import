@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/TileGrass3.png-b0d8bbfbb0d776f07810fd4ef318ed5a.stex"
+path="res://.import/TileRoad6.png-e17268958b01de1f6a6aa22391d01237.stex"
 
 [deps]
 
-source_file="res://src/places/tiles/TileGrass3.png"
-source_md5="56f6c477174fd301575aafca3756f594"
+source_file="res://src/places/tiles/images/TileRoad6.png"
+source_md5="89ce7e558f667fb59084259e530bf82d"
 
-dest_files=[ "res://.import/TileGrass3.png-b0d8bbfbb0d776f07810fd4ef318ed5a.stex" ]
-dest_md5="e85dda7ee5967a85d8ed9459af83e2e3"
+dest_files=[ "res://.import/TileRoad6.png-e17268958b01de1f6a6aa22391d01237.stex" ]
+dest_md5="346858ac5d15aaad374612f8d4d5f9d3"
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/TileRoad10.png-5909de620db01a99f81b84b44f3cc467.stex"
+path="res://.import/TileRoad7.png-8b1fd490f3e332adde28ae82be6df6b3.stex"
 
 [deps]
 
-source_file="res://src/places/tiles/TileRoad10.png"
-source_md5="80fc6e0b2390b60276cf5cb7155e2595"
+source_file="res://src/places/tiles/images/TileRoad7.png"
+source_md5="828ffdfa6618ee3a0f50e7b8e86c13ec"
 
-dest_files=[ "res://.import/TileRoad10.png-5909de620db01a99f81b84b44f3cc467.stex" ]
-dest_md5="7318457136166918d6cc16862a236046"
+dest_files=[ "res://.import/TileRoad7.png-8b1fd490f3e332adde28ae82be6df6b3.stex" ]
+dest_md5="2c01851efbf6565ec55214cbcc3b01e3"
 
 [params]
 
