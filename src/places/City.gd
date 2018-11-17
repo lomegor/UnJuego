@@ -31,4 +31,4 @@ func init(city_name, civilization, width=DEFAULT_WIDTH, height=DEFAULT_HEIGHT):
 	sprite.init(self, type)
 
 func select():
-	GameState.goto_scene(self)
+	GameState.goto_scene(self, false)
