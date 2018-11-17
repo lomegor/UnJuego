@@ -13,4 +13,8 @@ func init(city_name, civilization):
 	self.city_name = city_name
 	self.civilization = civilization
 	sprite = CitySprite.instance()
-	sprite.load_texture(sprite.TYPES.BLUE if civilization.type == 'blue' else sprite.TYPES.RED)
+	var type = sprite.TYPES.BLUE if civilization.type == 'blue' else sprite.TYPES.RED
+	sprite.init(self, type)
+
+func select():
+	GameState.goto_scene(self)

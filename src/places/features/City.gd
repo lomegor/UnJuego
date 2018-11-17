@@ -10,8 +10,14 @@ const _SPRITES = {
 	BLUE: "res://src/places/features/images/CityBlue.png",
 }
 
+var city
+
 func _ready():
 	pass
 
-func load_texture(type):
+func init(city, type):
+	self.city = city
 	_load_texture(_SPRITES[type])
+
+func _on_click():
+	city.select()
