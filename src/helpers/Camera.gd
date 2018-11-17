@@ -3,6 +3,7 @@ extends Camera2D
 const MAX_ZOOM_LEVEL = 0.5
 const MIN_ZOOM_LEVEL = 4.0
 const ZOOM_INCREMENT = 0.05
+const MOVE_INCREMENT = 30
 
 signal moved()
 signal zoomed()
@@ -11,6 +12,8 @@ var _current_zoom_level = 1
 var _drag = false
 
 func _input(event):
+	var offset = get_offset()
+
 	if event.is_action_pressed("camera_drag"):
 		_drag = true
 	elif event.is_action_released("camera_drag"):
@@ -20,7 +23,19 @@ func _input(event):
 	elif event.is_action("camera_zoom_out"):
 		_update_zoom(ZOOM_INCREMENT, get_local_mouse_position())
 	elif event is InputEventMouseMotion && _drag:
-		set_offset(get_offset() - event.relative * _current_zoom_level)
+		set_offset(offset - event.relative * _current_zoom_level)
+		emit_signal("moved")
+	elif Input.is_action_pressed("camera_left"):
+		set_offset(Vector2(offset.x - MOVE_INCREMENT * _current_zoom_level, offset.y))
+		emit_signal("moved")
+	elif Input.is_action_pressed("camera_right"):
+		set_offset(Vector2(offset.x + MOVE_INCREMENT * _current_zoom_level, offset.y))
+		emit_signal("moved")
+	elif Input.is_action_pressed("camera_up"):
+		set_offset(Vector2(offset.x, offset.y - MOVE_INCREMENT * _current_zoom_level))
+		emit_signal("moved")
+	elif Input.is_action_pressed("camera_down"):
+		set_offset(Vector2(offset.x, offset.y + MOVE_INCREMENT * _current_zoom_level))
 		emit_signal("moved")
 
 func _update_zoom(incr, zoom_anchor):

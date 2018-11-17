@@ -17,7 +17,7 @@ func _ready():
 
 	# Initiate map
 	GameState.globe = Globe.instance()
-	GameState.globe.init(30, 17)
+	GameState.globe.init(100, 100)
 
 	# Change to the map scene (probably in a button later)
 	GameState.goto_scene(GameState.globe)
