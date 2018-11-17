@@ -1,4 +1,4 @@
-extends Sprite
+extends "res://src/places/features/Feature.gd"
 
 enum TYPES {
 	RED,
@@ -14,4 +14,4 @@ func _ready():
 	pass
 
 func load_texture(type):
-	texture = load(_SPRITES[type])
+	_load_texture(_SPRITES[type])
