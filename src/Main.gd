@@ -10,18 +10,14 @@ func _ready():
 	# Crete two civilizations
 	GameState.civilizations.append(Civilization.instance())	
 	GameState.civilizations[0].init('Great Britain', 'red')
+	GameState.civilizations[0].add_city('Capital')
 	GameState.civilizations.append(Civilization.instance())	
 	GameState.civilizations[1].init('France', 'blue')
-
-	var cities = []
-	cities.append(City.instance())
-	cities[0].init('Capital', GameState.civilizations[0].civilization_name)
-	cities.append(City.instance())
-	cities[1].init('Village', GameState.civilizations[1].civilization_name)
+	GameState.civilizations[1].add_city('Capital')
 
 	# Initiate map
 	GameState.globe = Globe.instance()
-	GameState.globe.init(200, 100, cities)
+	GameState.globe.init(50, 50)
 
 	# Change to the map scene (probably in a button later)
 	GameState.goto_scene(GameState.globe)

@@ -1,7 +1,10 @@
 extends Node2D
 
+var City = load("res://src/places/City.tscn")
+
 var civilization_name
-var colour
+var cities = []
+var type
 
 # A dictionary of the resources that the civilization currenlty has
 var resources = {
@@ -15,11 +18,11 @@ var influence = {}
 func _ready():
 	pass
 
-func init(civilization_name, colour):
-	civilization_name = civilization_name
-	colour = colour
+func init(civilization_name, type):
+	self.civilization_name = civilization_name
+	self.type = type
 
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
+func add_city(city_name):
+	var city = City.instance()
+	city.init(city_name, self)
+	self.cities.append(city)

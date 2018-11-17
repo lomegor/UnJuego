@@ -1,8 +1,5 @@
 extends "res://src/places/GameTileMap.gd"
 
-# Map properties
-var city_tiles = []
-
 onready var camera = get_node('Camera')
 
 func _ready():
@@ -13,18 +10,8 @@ func _ready():
 	camera.limit_right = (map_limits.end.x + 1) * cell_size.x
 	camera.limit_bottom = (map_limits.end.y + 1) * cell_size.y
 
-func init(width, height, cities):
+func init(width, height):
 	_create_tiles(width, height)
-
-	# Add the new cities
-	for city in cities:
-		var newX = randi() % width
-		var newY = randi() % height
-		while (tiles[newX][newY] != null):
-			newX = randi() % width
-			newY = randi() % height
-
-		city_tiles.append(set_tile_by_name(newX, newY, city.tile_name, city))
 
 	# Randomise the rest of the map
 	for x in range(width):
@@ -37,3 +24,11 @@ func init(width, height, cities):
 				else:
 					new_tile_name = get_random_tile_name(GRASS_TILE_NAMES)
 				set_tile_by_name(x, y, new_tile_name)
+
+	# Add the new cities
+	for civilization in GameState.civilizations:
+		for city in civilization.cities:
+			var newX = randi() % width
+			var newY = randi() % height
+			city.sprite.position = Vector2(newX * cell_size.x, newY * cell_size.y)
+			add_child(city.sprite)
