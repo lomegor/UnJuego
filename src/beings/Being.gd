@@ -4,8 +4,10 @@ extends Node2D
 # Name for the being
 var being_name
 # Class and level
-var clase # can't name class, protected name
+var being_class
 var level
+# Civilization that it belongs to
+var civilization
 # Relationships with other persons
 var relationships = {}
 
@@ -35,7 +37,8 @@ func _ready():
 	# Initialization here
 	pass
 
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
+func init(being_name):
+	self.being_name = being_name
+
+func set_civilization(civilization):
+	self.civilization = civilization

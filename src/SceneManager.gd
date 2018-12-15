@@ -16,7 +16,7 @@ func goto_scene(scene, free=true):
 func _deferred_goto_scene(scene, free, skip_history=false):
 	# Free scene if we need to
 	if free:
-		current_scene.free()
+		current_scene.queue_free()
 	else:
 		if not skip_history:
 			history.append(current_scene)

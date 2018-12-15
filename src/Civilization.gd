@@ -4,6 +4,7 @@ var City = load("res://src/places/City.tscn")
 
 var civilization_name
 var cities = []
+var ruler
 var type
 
 # A dictionary of the resources that the civilization currenlty has
@@ -26,3 +27,7 @@ func add_city(city_name):
 	var city = City.instance()
 	city.init(city_name, self)
 	self.cities.append(city)
+
+func add_ruler(ruler):
+	self.ruler = ruler
+	self.ruler.set_civilization(self)
