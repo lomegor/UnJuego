@@ -39,6 +39,3 @@ func _ready():
 
 func init(being_name):
 	self.being_name = being_name
-
-func set_civilization(civilization):
-	self.civilization = civilization

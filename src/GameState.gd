@@ -25,15 +25,16 @@ func new_world():
 	# Create main civilization
 	civilizations.append(Civilization.instance())
 	civilizations[0].init('Great Britain', 'red')
-	civilizations[0].add_city('Capital')
-	civilizations[0].add_city('Village')
+	civilizations[0].city = City.instance()
+	civilizations[0].city.init('Capital')
 	# Add main civilization to player
-	civilizations[0].add_ruler(player)
+	civilizations[0].ruler = player
 
 	# Create other civilizations
 	civilizations.append(Civilization.instance())
 	civilizations[1].init('France', 'blue')
-	civilizations[1].add_city('Capital')
+	civilizations[1].city = City.instance()
+	civilizations[1].city.init('Capital2')
 
 	# Initiate map
 	globe = Globe.instance()

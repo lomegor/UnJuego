@@ -22,8 +22,14 @@ func init(width, height):
 
 	# Add the new cities
 	for civilization in GameState.civilizations:
-		for city in civilization.cities:
-			var newX = randi() % width
-			var newY = randi() % height
-			city.sprite.position = Vector2(newX * cell_size.x, newY * cell_size.y)
-			add_child(city.sprite)
+		var newX = randi() % width
+		var newY = randi() % height
+		civilization.city.sprite.set_position(Vector2(newX * cell_size.x, newY * cell_size.y))
+		add_child(civilization.city.sprite)
+	
+	# Set up the UI
+	var player_civilization = GameState.player.civilization
+	$GUI/CivilizationGUI.find_node('Name').text = player_civilization.civilization_name
+	$GUI/CivilizationGUI.find_node('Members').text = String(player_civilization.members.size())
+	$GUI/CivilizationGUI.find_node('Gold').text = String(player_civilization.resources.gold)
+	$GUI/CivilizationGUI.find_node('Influence').text = String(player_civilization.resources.influence_points)

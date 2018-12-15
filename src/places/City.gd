@@ -15,7 +15,7 @@ func _ready():
 	$Camera.set_offset(Vector2(1, 0))
 	pass
 
-func init(city_name, civilization, width=DEFAULT_WIDTH, height=DEFAULT_HEIGHT):
+func init(city_name, width=DEFAULT_WIDTH, height=DEFAULT_HEIGHT):
 	_create_tiles(width, height)
 
 	# Fill with grass
@@ -25,7 +25,6 @@ func init(city_name, civilization, width=DEFAULT_WIDTH, height=DEFAULT_HEIGHT):
 				set_tile_by_name(x, y, get_random_tile_name(GRASS_TILE_NAMES))
 
 	self.city_name = city_name
-	self.civilization = civilization
 	sprite = CitySprite.instance()
 	var type = sprite.TYPES.BLUE if civilization.type == 'blue' else sprite.TYPES.RED
 	sprite.init(self, type)

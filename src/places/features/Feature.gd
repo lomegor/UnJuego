@@ -40,3 +40,7 @@ func _on_mouse_exited():
 	modulate = Color(1, 1, 1, 1)
 	$Square.visible = false
 	$Description.visible = false
+
+func set_position(position):
+	# Needed because setting a property with an equal sign calles the parent setter
+	self.position = position
