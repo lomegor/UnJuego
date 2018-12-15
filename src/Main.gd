@@ -7,7 +7,7 @@ var Globe = load("res://src/places/Globe.tscn")
 func _ready():
 	randomize()
 
-	# Crete two civilizations
+	# Create two civilizations
 	GameState.civilizations.append(Civilization.instance())	
 	GameState.civilizations[0].init('Great Britain', 'red')
 	GameState.civilizations[0].add_city('Capital')
