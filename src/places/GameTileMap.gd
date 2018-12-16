@@ -43,6 +43,10 @@ func _create_tiles(width, height):
 func get_random_tile_name(list):
 	return list[randi() % list.size()]
 
+# Get the tile in position x, y
+func get_tile(x, y):
+	return tiles[x][y]
+
 # Get the tile name of the tile in x, y
 func get_tile_name(x, y):
 	return tiles[x][y].tile_name

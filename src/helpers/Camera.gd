@@ -5,11 +5,12 @@ const MIN_ZOOM_LEVEL = 4.0
 const ZOOM_INCREMENT = 0.05
 const MOVE_INCREMENT = 30
 
-signal moved()
-signal zoomed()
-
 var _current_zoom_level = 1
 var _drag = false
+var _original_limit_left
+var _original_limit_top
+var _original_limit_right
+var _original_limit_bottom
 
 func _input(event):
 	var offset = get_offset()
@@ -24,19 +25,14 @@ func _input(event):
 		_update_zoom(ZOOM_INCREMENT, get_local_mouse_position())
 	elif event is InputEventMouseMotion && _drag:
 		set_offset(offset - event.relative * _current_zoom_level)
-		emit_signal("moved")
 	elif Input.is_action_pressed("camera_left"):
 		set_offset(Vector2(offset.x - MOVE_INCREMENT * _current_zoom_level, offset.y))
-		emit_signal("moved")
 	elif Input.is_action_pressed("camera_right"):
 		set_offset(Vector2(offset.x + MOVE_INCREMENT * _current_zoom_level, offset.y))
-		emit_signal("moved")
 	elif Input.is_action_pressed("camera_up"):
 		set_offset(Vector2(offset.x, offset.y - MOVE_INCREMENT * _current_zoom_level))
-		emit_signal("moved")
 	elif Input.is_action_pressed("camera_down"):
 		set_offset(Vector2(offset.x, offset.y + MOVE_INCREMENT * _current_zoom_level))
-		emit_signal("moved")
 
 func _update_zoom(incr, zoom_anchor):
 	var old_zoom = _current_zoom_level
@@ -53,4 +49,15 @@ func _update_zoom(incr, zoom_anchor):
 	set_offset(get_offset() + zoom_center*ratio)
 
 	set_zoom(Vector2(_current_zoom_level, _current_zoom_level))
-	emit_signal("zoomed")
+
+	# Adjust limit of camera
+	if not _original_limit_left:
+		_original_limit_left = limit_left
+		_original_limit_top = limit_top
+		_original_limit_right = limit_right
+		_original_limit_bottom = limit_bottom
+
+	limit_left = _original_limit_left * _current_zoom_level
+	limit_top = _original_limit_top * _current_zoom_level
+	limit_right = _original_limit_right * _current_zoom_level
+	limit_bottom = _original_limit_bottom * _current_zoom_level

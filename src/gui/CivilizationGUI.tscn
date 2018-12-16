@@ -1,41 +1,16 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
-[sub_resource type="StyleBoxFlat" id=1]
+[ext_resource path="res://src/gui/gui.theme" type="Theme" id=1]
+[ext_resource path="res://src/gui/CivilizationGUI.gd" type="Script" id=2]
 
-content_margin_left = -1.0
-content_margin_right = -1.0
-content_margin_top = -1.0
-content_margin_bottom = -1.0
-bg_color = Color( 0.542969, 0.450176, 0.203613, 1 )
-draw_center = true
-border_width_left = 0
-border_width_top = 0
-border_width_right = 0
-border_width_bottom = 0
-border_color = Color( 0.8, 0.8, 0.8, 1 )
-border_blend = false
-corner_radius_top_left = 0
-corner_radius_top_right = 0
-corner_radius_bottom_right = 0
-corner_radius_bottom_left = 0
-corner_detail = 8
-expand_margin_left = 0.0
-expand_margin_right = 0.0
-expand_margin_top = 0.0
-expand_margin_bottom = 0.0
-shadow_color = Color( 0, 0, 0, 0.6 )
-shadow_size = 0
-anti_aliasing = true
-anti_aliasing_size = 1
-
-[node name="CivilizationGUI" type="PanelContainer"]
+[node name="CivilizationGUI" type="PanelContainer" index="0"]
 
 use_parent_material = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 166.0
+margin_right = 281.0
 margin_bottom = 23.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -43,8 +18,9 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_styles/panel = SubResource( 1 )
-_sections_unfolded = [ "custom_styles" ]
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+_sections_unfolded = [ "Theme", "custom_styles" ]
 
 [node name="MarginContainer" type="MarginContainer" parent="." index="0"]
 
@@ -52,14 +28,15 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 166.0
-margin_bottom = 23.0
+margin_right = 280.0
+margin_bottom = 22.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+_sections_unfolded = [ "Margin" ]
 
 [node name="Minimized" type="HBoxContainer" parent="MarginContainer" index="0"]
 
@@ -68,8 +45,8 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 8.0
-margin_right = 166.0
-margin_bottom = 23.0
+margin_right = 280.0
+margin_bottom = 22.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -85,7 +62,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 53.0
-margin_bottom = 23.0
+margin_bottom = 22.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -115,7 +92,7 @@ text = "Test"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Margin" ]
+_sections_unfolded = [ "Margin", "Theme" ]
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Minimized/Details" index="1"]
 
@@ -125,7 +102,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 29.0
 margin_right = 53.0
-margin_bottom = 23.0
+margin_bottom = 22.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -207,7 +184,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 57.0
 margin_right = 150.0
-margin_bottom = 23.0
+margin_bottom = 22.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -223,7 +200,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 43.0
-margin_bottom = 23.0
+margin_bottom = 22.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -283,7 +260,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 47.0
 margin_right = 93.0
-margin_bottom = 23.0
+margin_bottom = 22.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1

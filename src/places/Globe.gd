@@ -28,8 +28,4 @@ func init(width, height):
 		add_child(civilization.city.sprite)
 	
 	# Set up the UI
-	var player_civilization = GameState.player.civilization
-	$GUI/CivilizationGUI.find_node('Name').text = player_civilization.civilization_name
-	$GUI/CivilizationGUI.find_node('Members').text = String(player_civilization.members.size())
-	$GUI/CivilizationGUI.find_node('Gold').text = String(player_civilization.resources.gold)
-	$GUI/CivilizationGUI.find_node('Influence').text = String(player_civilization.resources.influence_points)
+	$GUI/CivilizationGUI.init(GameState.player.civilization)
