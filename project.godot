@@ -11,19 +11,18 @@ config_version=3
 [application]
 
 config/name="UnJuego"
-run/main_scene="res://src/Main.tscn"
+run/main_scene="res://src/scenes/MainMenu.tscn"
 config/icon="res://images/icon.png"
 
 [autoload]
 
-GameState="*res://src/GameState.gd"
+GameState="res://src/globals/GameState.gd"
 
 [display]
 
 window/size/width=1440
+window/size/height=900
 window/size/resizable=false
-window/size/borderless=true
-window/size/fullscreen=true
 
 [input]
 
