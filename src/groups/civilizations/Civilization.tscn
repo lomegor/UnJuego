@@ -1,0 +1,9 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/groups/civilizations/Civilization.gd" type="Script" id=1]
+
+
+
+[node name="Civilization" type="Node2D" index="0"]
+
+script = ExtResource( 1 )
