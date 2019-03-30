@@ -17,7 +17,7 @@ func _ready():
 
 func init(width, height):
 	tile_manager = TileManager.instance()
-
+	tile_manager.init(self)
 	tile_manager.create_tile_map(width, height)
 
 	# Randomise the map
@@ -30,4 +30,7 @@ func init(width, height):
 					new_tile_name = tile_manager.get_random_tile_name(tile_manager.MOUNTAIN_TILE_NAMES)
 				else:
 					new_tile_name = tile_manager.get_random_tile_name(tile_manager.GRASS_TILE_NAMES)
-				tile_manager.set_tile_by_name(x, y, new_tile_name, self)
+				tile_manager.set_tile_by_name(x, y, new_tile_name)
+
+func add_entity(entity, position):
+	tile_manager.add_entity(entity, position)

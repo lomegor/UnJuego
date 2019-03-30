@@ -9,19 +9,22 @@ const ROAD_TILE_NAMES = ["RoadCenter", "RoadTop", "RoadRight", "RoadBottom", "Ro
 
 # Save Tiles objects
 var tiles = []
-
+var tile_map
 
 # Class to represent a tile on the map
 class Tile:
 	var tile_name
-	var object
+	var entity
 
-	func _init(tile_name, object=null):
+	func _init(tile_name, entity=null):
 		self.tile_name = tile_name
-		self.object = object
+		self.entity = entity
 
 func _ready():
 	pass
+
+func init(tile_map):
+	self.tile_map = tile_map
 
 # Create the matrix of tiles
 func create_tile_map(width, height):
@@ -42,8 +45,13 @@ func get_tile(x, y):
 func get_tile_name(x, y):
 	return tiles[x][y].tile_name
 
-# Se the tile in x, y with a tile name. Reuse object
-func set_tile_by_name(x, y, tile_name, tile_map, object=null):
-	tiles[x][y] = Tile.new(tile_name, object)
+# Se the tile in x, y with a tile name.
+func set_tile_by_name(x, y, tile_name):
+	tiles[x][y] = Tile.new(tile_name)
 	tile_map.set_cell(x, y, tile_map.tile_set.find_tile_by_name(tile_name))
 	return tiles[x][y]
+
+func add_entity(entity, position):
+	tiles[position.x][position.y].entity = entity
+	tile_map.add_child(entity)
+	entity.position = Vector2(tile_map.cell_size.x * position.x, tile_map.cell_size.y * position.y)

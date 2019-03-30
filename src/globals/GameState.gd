@@ -3,6 +3,7 @@ extends 'res://src/globals/SceneManager.gd'
 var Actor = load('res://src/entities/actors/Actor.tscn')
 var Civilization = load('res://src/groups/civilizations/Civilization.tscn')
 var Region = load('res://src/maps/regions/Region.tscn')
+var Entity = load('res://src/entities/Entity.tscn')
 
 # Civilizations in the game
 var civilizations = []
@@ -10,6 +11,8 @@ var civilizations = []
 var regions = []
 # Main player
 var player
+# Entities
+var entities = []
 
 func _ready():
 	pass
@@ -34,3 +37,7 @@ func new_world():
 	# Create other civilizations
 	civilizations.append(Civilization.instance())
 	civilizations[1].init(regions[0], 'France', 'blue')
+
+	# Create entities
+	entities.append(Entity.instance())
+	regions[0].add_entity(entities[0], Vector2(10,10))
