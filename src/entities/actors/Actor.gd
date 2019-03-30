@@ -1,10 +1,10 @@
 extends '../Entity.gd'
 
 
-# Name for the entity
-var entity_name
+# Name for the actor
+var actor_name
 # Class and level
-var entity_class
+var actor_class
 var level
 # Civilization that it belongs to
 var civilization
@@ -29,14 +29,13 @@ var skills = {
 	'leadership': 0,
 	'mana': 0
 }
-# What the entity is currently doing (could be an enum, like fighting, leading, partying...)
+# What the actor is currently doing (could be an enum, like fighting, leading, partying...)
 var currentActivity
 
 
 func _ready():
-	# Called when the node is added to the scene for the first time.
-	# Initialization here
 	pass
 
-func init(entity_name):
-	self.entity_name = entity_name
+func init(actor_name):
+	self.actor_name = actor_name
+	$Entity/Sprite.texture = load('res://src/entities/actors/assets/default_actor.png')

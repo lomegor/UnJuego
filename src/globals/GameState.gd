@@ -41,3 +41,4 @@ func new_world():
 	# Create entities
 	entities.append(Entity.instance())
 	regions[0].add_entity(entities[0], Vector2(10,10))
+	regions[0].add_entity(player, Vector2(0,2))
