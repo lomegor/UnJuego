@@ -1,4 +1,4 @@
-extends '../Entity.gd'
+extends Node2D
 
 
 # Name for the actor
@@ -38,4 +38,14 @@ func _ready():
 
 func init(actor_name):
 	self.actor_name = actor_name
-	$Entity/Sprite.texture = load('res://src/entities/actors/assets/default_actor.png')
+	$Entity.load_texture('res://src/entities/actors/assets/default_actor.png')
+
+func select():
+	$Entity.set_shader_param('outlineSize', 1)
+	# Return true to indicate selected
+	return true
+
+func unselect():
+	$Entity.set_shader_param('outlineSize', 0)
+	# Return true to move
+	return true

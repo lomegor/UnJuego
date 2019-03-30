@@ -34,3 +34,10 @@ func init(width, height):
 
 func add_entity(entity, position):
 	tile_manager.add_entity(entity, position)
+
+# Handle clicks on tiles and entities
+func _input(event):
+	if event.is_action_pressed('ui_select'):
+		tile_manager.handle_select(event, get_local_mouse_position())
+	elif event.is_action_pressed('ui_cancel'):
+		tile_manager.handle_unselect(event)

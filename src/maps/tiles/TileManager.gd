@@ -10,6 +10,7 @@ const ROAD_TILE_NAMES = ["RoadCenter", "RoadTop", "RoadRight", "RoadBottom", "Ro
 # Save Tiles objects
 var tiles = []
 var tile_map
+var selected
 
 # Class to represent a tile on the map
 class Tile:
@@ -51,7 +52,31 @@ func set_tile_by_name(x, y, tile_name):
 	tile_map.set_cell(x, y, tile_map.tile_set.find_tile_by_name(tile_name))
 	return tiles[x][y]
 
+func is_position_in_map(position):
+	return position > Vector2(0,0) and position.x < tiles.size() and position.y < tiles[0].size()
+
+func get_position_from_tile_index(position):
+	return Vector2(tile_map.cell_size.x * position.x, tile_map.cell_size.y * position.y)
+
 func add_entity(entity, position):
 	tiles[position.x][position.y].entity = entity
 	tile_map.add_child(entity)
-	entity.position = Vector2(tile_map.cell_size.x * position.x, tile_map.cell_size.y * position.y)
+	entity.position = get_position_from_tile_index(position)
+
+# Handle selection of tiles and entites
+func handle_select(event, mouse_position):
+	var position = tile_map.world_to_map(mouse_position)
+	if is_position_in_map(position):
+		var tile = tiles[position.x][position.y]
+		if selected and not tile.entity :
+			handle_unselect(event, tile, position)
+		elif tile and tile.entity and tile.entity.select():
+			selected = tile
+
+func handle_unselect(event, tile=null, position=null):
+	if selected.entity.unselect() and position:
+		selected.entity.position = get_position_from_tile_index(position)
+		if tile:
+			tile.entity = selected.entity
+		selected.entity = null
+	selected = null
